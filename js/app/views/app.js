@@ -2,9 +2,10 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
+	'app/views/dash',
 	'app/views/about'
 	
-	], function ($, _, Backbone, AboutView) {
+	], function ($, _, Backbone, DashView, AboutView) {
 
 		'use strict';
 
@@ -45,13 +46,11 @@ define([
 				this.$('#content').append(this.views['dash'].render().el);
 			},
 
-			onNavAbout: function (e) {
-				alert('About button clicked');
+			setPage: function(page) {
+				this.$('.page-view').hide();
+				this.$('#page-'+page).show();
 			},
 
-			onNavDash: function (e) {
-				alert('Dash button clicked');
-			}
 		});
 
 		return AppView;

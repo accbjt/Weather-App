@@ -11,10 +11,21 @@ define([
 			routes: {
 				'' : 'goToDash',
 				'dash': 'goToDash',
-				'about': 'goToAbout0'
+				'about': 'goToAbout'
 			},
 
-		
+		initialize: function (view) {
+			this.appView = view;
+		},
+
+		gotToDash: function () {
+			this.appView.setPage ('dash');
+		},
+
+		gotToAbout: function () {
+			this.appView.setPage ('about');
+		}
+
 		});
 
 		return Router;
